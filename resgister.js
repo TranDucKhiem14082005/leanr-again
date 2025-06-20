@@ -1,0 +1,1 @@
+console.log(object.login("demo3", "demo3"));
