@@ -248,11 +248,11 @@ Gioi thieu moi so ham built-in;
  
 // a-z A-Z 0-9 _ $ : Không được đặt số ở kí tự đầu tiên
 
-function showDialog() {
-    alert('Hello World');
-}
+// function showDialog() {
+//     alert('Hello World');
+// }
 
-showDialog();
+// showDialog();
 
 /*
 
@@ -272,4 +272,179 @@ showDialog();
     - Đối số có thể có giá trị mặc định
 
 
+    1. Tham số?
+    -Định nghĩa?: Là giá trị truyền vào khi được định nghĩa
+    -Kiểu dữ liệu?: KDL là không giới hạn, có thể là bất kỳ kiểu dữ liệu nào
+    -Tính private?: 
+    -1 tham số
+    -nhiều tham số
+
+    2. Truyền tham số:
+    - 1tham số
+    - Nhiều tham số
+
+    3. Arguments: Chỉ xuất hiện trong function
+    - Đối tượng Arguments:
+    - Giới thiệu vòng for of
+
 */
+// param la` tham số truyền vào hàm
+
+// function writeLog() {
+//     var myString = '';
+//     for(var tenbien of arguments) {
+//         myString += tenbien + ', ';
+//     }
+//     console.log(myString);
+
+// }
+
+// writeLog(1,2,3,4,5,6); // Gọi hàm
+
+
+// Return trong hàm
+
+// var isConfirm = confirm('Are you sure?');
+
+// console.log(isConfirm);
+
+// function cong(a, b) {
+//     return a + b; // Trả về giá trị của phép cộng   
+// }
+
+// var result = cong(1, 2); // Gọi hàm và lưu kết quả vào biến result
+
+// console.log(result); // In ra kết quả của phép cộng
+
+
+/*
+    Một số điều cần biết về function
+
+    1. Khi function đặt trùng tên? Khi các function trung tền thì
+    hàm được định nghĩa sau sẽ ghi đè lên hàm được định nghĩa trước đó.
+    - Ví dụ: Hàm showMessage được định nghĩa hai lần, hàm thứ hai sẽ ghi đè lên hàm thứ nhất.
+    
+    2. Khai báo biến trong hàm? có thể khai báo biến trong hàm, biến này sẽ chỉ có thể sử dụng trong hàm đó.
+    3. Định nghĩa hàm trong hàm? Có
+    -Tuy nhiên, hàm bên trong có thể truy cập biến của hàm bên ngoài, nhưng hàm bên ngoài không thể truy cập biến của hàm bên trong.
+    -Hàm được khai báo trong hàm thì phải sử dụng call back chính trong hàm đó luôn.
+
+ */
+
+// function showMessage() {
+//    console.log('message1 from showMessage function');
+// }
+
+// function showMessage() {
+//     console.log('message2 from showMessage function');
+// }
+
+// showMessage(); // Gọi hàm showMessage, sẽ in ra message2
+
+// function showMessage() {
+//     var message = 'Hello world'; // Biến này chỉ có thể sử dụng trong hàm này
+//     console.log(message);
+
+//     function showInnerMessage() {
+//         console.log('Inner message: ' + message); // Có thể truy cập biến message từ hàm bên trong
+//     }
+
+//     showInnerMessage(); // Gọi hàm bên trong để in ra message
+// }
+
+// // console.log(message); // Sẽ báo lỗi vì biến message không được định nghĩa ở đây 
+
+// showMessage();
+
+/*
+    Các loại function
+    1. Function declaration: 
+    2. Function expression: 
+    3. Arrow function: 
+
+ */
+
+// Function declaration
+// function greet(name) {
+//     return console.log(`Hello, ${name}!`);`Hello, ${name}!`;
+// }
+
+// greet('Khiem');
+
+// // Function expression: Có thể đặt tên hoặc không
+// // Nên đặt => để biết xem hàm đó làm về công việc gì.
+// var showMessage2 = function(name) {
+//     return console.log(`Message: ${name}`);;
+// }
+
+// showMessage2('Khiem');
+
+
+// // setTimeout(function() {
+// //     console.log('This is a delayed message after 1 second.');
+// // }, 1000);
+
+// var myObject = {
+//     myFunction: function() {
+//         console.log('This is a method inside an object.');
+//     }
+// };
+
+// myObject.myFunction(); // Gọi hàm bên trong đối tượng
+
+
+
+//--------------------------------------------------
+
+// Polyfill là gì?
+// Polyfill là một đoạn mã JavaScript được sử dụng để cung cấp các tính năng mới của ngôn ngữ JavaScript mà không được hỗ trợ bởi trình duyệt hiện tại.
+// Polyfill cho phép các nhà phát triển sử dụng các tính năng mới của JavaScript mà không cần phải lo lắng về việc trình duyệt có hỗ trợ hay không.
+
+//---------------------------------------------------
+
+/*
+    Object trong javaScript
+    Một key không có sẽ trả về undefined
+
+    // funtion -> phương thức
+    // others --> các dạng dữ liệu được lấy ra trực tiếp mà không
+    cần đến call thì gọi là thuộc tính (property)
+    
+*/
+
+var isMale = 'male'; // Khai báo một biến kiểu boolean
+// Phải tạo ra một cái biến ở trước object mà mình muốn thêm 
+// key vào, nếu không thì sẽ báo lỗi
+// Trong object thì phải dùng dấu [] để khai báo key là biến
+// Nếu không thì nó sẽ hiểu là một cái key được khai báo
+
+var myInfo = {
+    name: 'Tran Duc Khiem',
+    age: 19,
+    address: 'Ha Noi',
+    [isMale]: true, // Khai báo một biến kiểu boolean chưa có key trong object
+
+    getName: function() {
+        return this.name;
+    }
+
+}
+
+console.log(myInfo);
+var myKey = 'name'; // Khai báo một biến chứa tên key
+//Truy cập vào giá trị mà = 'true', // Khai báo một biến kiểu boolea chưa có key trong object
+console.log(myInfo[myKey]); // Truy cập vào giá trị của key name trong object myInfo
+
+// Thêm một cặp key-value mới vào object
+myInfo.email = 'khiemtran@gmail.com'
+myInfo['phone'] = '0123456789';
+// Thay đôi các giá trị của các key trong object
+myInfo.age = 20;
+// Xóa một cặp key-value trong object
+delete myInfo.address;
+// Truy cập vào các giá trị của object
+console.log(myInfo.name); // Truy cập vào giá trị của key name
+
+console.log(myInfo['phone']); // Truy cập vào giá trị của key email
+
+console.log(myInfo.getName()); // Gọi hàm getName trong object myInfo
