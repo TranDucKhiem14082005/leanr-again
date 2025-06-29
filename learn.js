@@ -412,39 +412,110 @@ Gioi thieu moi so ham built-in;
     
 */
 
-var isMale = 'male'; // Khai báo một biến kiểu boolean
-// Phải tạo ra một cái biến ở trước object mà mình muốn thêm 
-// key vào, nếu không thì sẽ báo lỗi
-// Trong object thì phải dùng dấu [] để khai báo key là biến
-// Nếu không thì nó sẽ hiểu là một cái key được khai báo
+// var isMale = 'male'; // Khai báo một biến kiểu boolean
+// // Phải tạo ra một cái biến ở trước object mà mình muốn thêm 
+// // key vào, nếu không thì sẽ báo lỗi
+// // Trong object thì phải dùng dấu [] để khai báo key là biến
+// // Nếu không thì nó sẽ hiểu là một cái key được khai báo
 
-var myInfo = {
-    name: 'Tran Duc Khiem',
-    age: 19,
-    address: 'Ha Noi',
-    [isMale]: true, // Khai báo một biến kiểu boolean chưa có key trong object
+// var myInfo = {
+//     name: 'Tran Duc Khiem',
+//     age: 19,
+//     address: 'Ha Noi',
+//     [isMale]: true, // Khai báo một biến kiểu boolean chưa có key trong object
 
-    getName: function() {
-        return this.name;
-    }
+//     getName: function() {
+//         return this.name;
+//     }
 
+// }
+
+// console.log(myInfo);
+// var myKey = 'name'; // Khai báo một biến chứa tên key
+// //Truy cập vào giá trị mà = 'true', // Khai báo một biến kiểu boolea chưa có key trong object
+// console.log(myInfo[myKey]); // Truy cập vào giá trị của key name trong object myInfo
+
+// // Thêm một cặp key-value mới vào object
+// myInfo.email = 'khiemtran@gmail.com'
+// myInfo['phone'] = '0123456789';
+// // Thay đôi các giá trị của các key trong object
+// myInfo.age = 20;
+// // Xóa một cặp key-value trong object
+// delete myInfo.address;
+// // Truy cập vào các giá trị của object
+// console.log(myInfo.name); // Truy cập vào giá trị của key name
+
+// console.log(myInfo['phone']); // Truy cập vào giá trị của key email
+
+// console.log(myInfo.getName()); // Gọi hàm getName trong object myInfo
+
+// ****************************************
+
+// Object constructor: Là một bản thiết kế
+
+/*
+
+    Object prototype - basic : Nguyên mẫu để tạo nên một đối tượng
+
+    1. prototype là gì?
+    2. sử dụng khi nào?
+
+
+*/
+
+// function User(fisrtName, lastName, avatar) {
+//     this.firsrtName = fisrtName; // this là đối tượng hiện tại
+//     this.lastName = lastName;
+//     this.avatar = avatar;
+//     this.getName = function () {
+//         return `${this.firsrtName} ${this.lastName}`;
+//     }
+// }
+
+// User.prototype.className = 'F8'; // Thêm một thuộc tính bằng prototype
+
+// User.prototype.getAvatar = function() {
+//     return this.avatar;
+// }
+
+// // trong object prototype chỉ khi là phương thước thì
+// // mới sử dụng từ this, còn thuộc tính thì không dùng.
+
+// var author = new User('Tran', 'Duc Khiem', 'https://example.com/avatar.jpg'); // Tạo một đối tượng mới từ hàm User
+// var user = new User('Tran', 'Kim Linh', 'https://example.com/avatar.jpg'); // Tạo một đối tượng mới từ hàm User
+
+// author.age = 19; // Thêm thuộc tính age vào đối tượng author
+
+// console.log(author.getAvatar());
+// console.log(user);
+
+// ***********************************
+
+/*
+    Date object in JavaScript: Đối tượng Date trong JS
+    => Làm việc thời gian
+*/
+
+// var date = new Date();
+
+// var getYears = date.getFullYear();
+
+// var getMonth = date.getMonth() + 1; // getMonth chỉ trả về giá trị từ 0-11
+
+// var getday = date.getDate();
+
+// console.log(`${getday} ${getMonth} ${getYears}`);
+
+//------------------------------------------------------------
+
+// Câu lệnh rẽ nhánh - If else
+
+var date = 2;
+
+if (date === 2) {
+    console.log('Hôm nay là thú 2');
+} else if (date === 3) {
+    console.log('Hôm nay là thú 3');
+} else if (date === 4) {
+    console.log('Hôm nay là thú 4');
 }
-
-console.log(myInfo);
-var myKey = 'name'; // Khai báo một biến chứa tên key
-//Truy cập vào giá trị mà = 'true', // Khai báo một biến kiểu boolea chưa có key trong object
-console.log(myInfo[myKey]); // Truy cập vào giá trị của key name trong object myInfo
-
-// Thêm một cặp key-value mới vào object
-myInfo.email = 'khiemtran@gmail.com'
-myInfo['phone'] = '0123456789';
-// Thay đôi các giá trị của các key trong object
-myInfo.age = 20;
-// Xóa một cặp key-value trong object
-delete myInfo.address;
-// Truy cập vào các giá trị của object
-console.log(myInfo.name); // Truy cập vào giá trị của key name
-
-console.log(myInfo['phone']); // Truy cập vào giá trị của key email
-
-console.log(myInfo.getName()); // Gọi hàm getName trong object myInfo
