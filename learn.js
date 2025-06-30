@@ -510,12 +510,77 @@ Gioi thieu moi so ham built-in;
 
 // Câu lệnh rẽ nhánh - If else
 
-var date = 2;
+// var date = 2;
 
-if (date === 2) {
-    console.log('Hôm nay là thú 2');
-} else if (date === 3) {
-    console.log('Hôm nay là thú 3');
-} else if (date === 4) {
-    console.log('Hôm nay là thú 4');
-}
+// if (date === 2) {
+//     console.log('Hôm nay là thú 2');
+// } else if (date === 3) {
+//     console.log('Hôm nay là thú 3');
+// } else if (date === 4) {
+//     console.log('Hôm nay là thú 4');
+// }
+
+//------------------------------ Ôn tập ---------------------------------
+
+// var a = 10;
+// var pi = 3.14;
+// console.log(a.toString());
+// console.log( pi.toFixed());
+
+// var fullName = 'Tran Duc Khiem';
+
+// var fisrtName = 'Tran Duc';
+
+// var lastName = '  Khiem';
+
+// console.log(fullName.replace('Khiem', 'KHIEM')); // thay the
+
+// console.log(fullName.slice(1,2)); // cat chuoi
+
+// console.log(fullName.split());
+
+// console.log(fullName.toLocaleLowerCase());
+// console.log(fullName.toLocaleUpperCase());
+
+// console.log(fisrtName.concat(` ${lastName}`));
+// console.log(fullName.indexOf('Khiem',1)); // tim tu
+
+// console.log(lastName.trim()); // chuan hoa chuoi
+
+//============================== 
+// Ham`
+
+// function showMessage(param) {
+//     console.log(param);
+
+// }
+
+// showMessage('heello ae')
+
+// var plus = function(a,b) {
+//     console.log('cho nay dung de in ra: ');
+//     function showDialog(message) {
+//         console.log(message);
+//     }
+//     showDialog('hello ae');
+// }
+
+// plus();
+
+//---------------------- Object ------------------
+
+var isMale = 'male';// them mot key bang cach su dung bien
+
+var info = {
+    name: 'Tran Duc Khiem',
+    age: 19,
+    [isMale]: true
+};
+
+info.phone = 123513123;
+
+info['email'] = 'khiemtran@gmail.com'
+
+console.log(info);
+console.log(info.name);
+console.log(info['email']);
