@@ -1,0 +1,1 @@
+console.log('this is space for me practice knowledge and exercises when i leanr new something from IT');
