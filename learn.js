@@ -569,18 +569,126 @@ Gioi thieu moi so ham built-in;
 
 //---------------------- Object ------------------
 
-var isMale = 'male';// them mot key bang cach su dung bien
+// var isMale = 'male';// them mot key bang cach su dung bien
 
-var info = {
-    name: 'Tran Duc Khiem',
-    age: 19,
-    [isMale]: true
-};
+// var info = {
+//     name: 'Tran Duc Khiem',
+//     age: 19,
+//     [isMale]: true
+// };
 
-info.phone = 123513123;
+// info.phone = 123513123;
 
-info['email'] = 'khiemtran@gmail.com'
+// info['email'] = 'khiemtran@gmail.com'
 
-console.log(info);
-console.log(info.name);
-console.log(info['email']);
+// console.log(info);
+// console.log(info.name);
+// console.log(info['email']);
+
+
+//================================================
+
+// Vong lap for
+
+// var myArray = [
+//     'JS',
+//     'PHP',
+//     'Ruby',
+//     'Python'
+// ]
+
+// var lengths = myArray.length;
+
+// for (var i = 0; i < lengths; i++) {
+//         console.log(myArray[i]);
+// }
+
+
+// ******** for in loop : Lay ra cac key trong mot doi tuong ****************
+
+// var myInfo = {
+//     name: 'Tran Duc Khiem',
+//     age: 19,
+//     address: 'Ha Noi',
+// }
+
+// for(var key in myInfo) {
+//     console.log(myInfo[key]); // In ra giá trị của key trong object myInfo
+// }
+
+// lay gia tri tu key trong mang cung giong nhu lay gia tri
+// tu key trong object
+
+// var languages = [
+//     'JS',
+//     'PHP',
+// ]
+
+// for (var key in languages) {
+//     console.log(languages[key]); // In ra giá trị của key trong mảng languages
+// }
+
+
+// ************// for of loop: Duyệt qua các phần tử trong mảng*****************
+// tung chu cai trong mot chuoi
+
+// var languages = [
+//     'js',
+//     'PHP'
+// ]
+
+// var languages1 = 'PHP';
+
+// // No se khong su dung vong lop cho mot object
+
+// var myInfo = {
+//     name: "Khiem",
+//     age: 19
+// }
+
+// console.log(Object.values(myInfo)); // In ra các giá trị trong object myInfo ra 1 mang
+
+// console.log(Object.keys(myInfo)); // In ra các key trong object myInfo
+
+// console.log(Object.keys(myInfo)); // In ra các giá trị trong object myInfo
+
+// for (var value of languages) {
+//     console.log(value); // In ra giá trị của từng phần tử trong mảng languages
+// }
+
+// for (var value of languages1) {
+//     console.log(value); // In ra giá trị của từng ký tự trong chuỗi languages1
+// }
+
+// for (var value of Object.keys(myInfo)) {
+//     console.log(myInfo[value]); // In ra các key trong object myInfo
+// }
+
+// for (var value of Object.values(myInfo)) {
+//     console.log(value);
+// }
+
+// ------------------------------------------------------------------
+
+
+// while loop
+
+
+var myArray = [
+    "JS",
+    'PHP'
+]
+
+var lengths = myArray.length;
+ var i = 0;
+
+while (i < lengths) {
+    i++;
+    console.log(myArray[i]);
+}
+
+// var i = 0;
+// while(i < 1000) {
+//     i++;
+//     console.log(i);
+// }
