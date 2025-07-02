@@ -674,21 +674,160 @@ Gioi thieu moi so ham built-in;
 // while loop
 
 
-var myArray = [
-    "JS",
-    'PHP'
-]
+// var myArray = [
+//     "JS",
+//     'PHP'
+// ]
 
-var lengths = myArray.length;
- var i = 0;
+// var lengths = myArray.length;
+//  var i = 0;
 
-while (i < lengths) {
-    i++;
-    console.log(myArray[i]);
-}
+// while (i < lengths) {
+//     i++;
+//     console.log(myArray[i]);
+// }
 
 // var i = 0;
 // while(i < 1000) {
 //     i++;
 //     console.log(i);
 // }
+
+// Do While
+
+// var i = 0;
+
+// do {
+//     i++;
+//     console.log(i);
+// } while (i < 10);
+
+
+// Break và Continue
+
+// for (var i = 0; i < 10; i++) { 
+//     // if (i === 5) {
+//     //     break; // Dừng vòng lặp khi i bằng 5
+//     // }
+
+//     if (i % 2 === 0) {
+//         continue; // Bỏ qua các số chẵn
+//     }
+//     console.log(i);
+// }
+
+// Vong lap long nhau
+
+// var myArray = [
+//     [1,2],
+//     [3,4]
+//  ]
+
+//  for (var i = 0; i < myArray.length; i++) {
+//     for(var j = 0; j < myArray[i].length; j++) {
+//         console.log(myArray[i][j]); // In ra từng phần tử trong mảng hai chiều
+//     }
+//  }
+
+
+//  for (var i = 100; i >= 0; i -= 5) {
+//     console.log(i); // In ra các số từ 100 đến 0, giảm dần mỗi lần 5
+//  }
+
+
+// ----------------------------------------------------
+
+/*
+    Array methods:
+        forEach(): Duyệt qua từng phần tử trong mảng
+        every(): Kiem tra tat ca cac phan tu cua mang phai thoa man mot dieu kien gi do
+        some(): 
+        find(): 
+        filter(): 
+        map(): 
+        reduce(): 
+        indexOf():  
+        lastIndexOf(): 
+*/
+
+var courses = [
+     {
+        id: 1,
+        name: 'JavaScript',
+        coin: 100
+     },
+     {
+        id: 2,
+        name: 'PHP',
+        coin: 0
+     },
+     {
+        id: 3,
+        name: 'Ruby',
+        coin: 0
+    },
+    {
+        id: 4,
+        name: 'Python',
+        coin: 500
+    }    
+
+]
+
+
+// Duyet qua cac phần tử trong mảng 
+// courses.forEach(function(course, index) {
+//     console.log(index,course);
+// })
+
+// for (var course of courses) { 
+//     console.log(course);
+// }
+
+// for (var i = 0; i < courses.length; i++) {
+//     console.log(courses[i]);
+// }
+
+// Duyet qua cac phan tu trong mang va kiem tra dieu kien. Phai dung het tat ca
+
+// var isFree = courses.every(function(course,index) { 
+//     return course.coin === 0;
+// })
+
+// console.log(isFree)
+
+// for (var course of courses) {
+//     if(course.coin ===0) {
+//         console.log(course.name);
+//     }
+// }
+
+// for(var i = 0; i < courses.length; i++) {
+//     if(courses[i].coin === 0) {
+//         console.log(courses[i].name);
+//     }
+// }
+
+// 
+
+// Duyet qua cac phan tu trong mang va kiem tra dieu kien. Chi 1 la du
+var isFree = courses.some(function(course,index) { 
+    return course.coin === 0;
+})
+
+
+// Kiem tra xem co PT nao co trong mang khong, neu co thi se
+// tra ve phan tu do, neu khong co thi tra ve undefined
+var course = courses.find(function(course,index) { 
+    return course.name === 'Ruby';
+})
+
+console.log(course);
+
+
+// Con filter se tra ve mot mang moi khi thoa man yeu cau
+var course = courses.filter(function(course,index) { 
+    return course.name === 'Ruby';
+})
+
+console.log(course);
