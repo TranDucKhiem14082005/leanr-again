@@ -750,29 +750,29 @@ Gioi thieu moi so ham built-in;
         lastIndexOf(): 
 */
 
-var courses = [
-     {
-        id: 1,
-        name: 'JavaScript',
-        coin: 100
-     },
-     {
-        id: 2,
-        name: 'PHP',
-        coin: 0
-     },
-     {
-        id: 3,
-        name: 'Ruby',
-        coin: 0
-    },
-    {
-        id: 4,
-        name: 'Python',
-        coin: 500
-    }    
+// var courses = [
+//      {
+//         id: 1,
+//         name: 'JavaScript',
+//         coin: 100
+//      },
+//      {
+//         id: 2,
+//         name: 'PHP',
+//         coin: 0
+//      },
+//      {
+//         id: 3,
+//         name: 'Ruby',
+//         coin: 0
+//     },
+//     {
+//         id: 4,
+//         name: 'Python',
+//         coin: 500
+//     }    
 
-]
+// ]
 
 
 // Duyet qua cac phần tử trong mảng 
@@ -811,23 +811,23 @@ var courses = [
 // 
 
 // Duyet qua cac phan tu trong mang va kiem tra dieu kien. Chi 1 la du
-var isFree = courses.some(function(course,index) { 
-    return course.coin === 0;
-})
+// var isFree = courses.some(function(course,index) { 
+//     return course.coin === 0;
+// })
 
 
-// Kiem tra xem co PT nao co trong mang khong, neu co thi se
-// tra ve phan tu do, neu khong co thi tra ve undefined
-var course = courses.find(function(course,index) { 
-    return course.name === 'Ruby';
-})
+// // Kiem tra xem co PT nao co trong mang khong, neu co thi se
+// // tra ve phan tu do, neu khong co thi tra ve undefined
+// var course = courses.find(function(course,index) { 
+//     return course.name === 'Ruby';
+// })
 
-console.log(course);
+// console.log(course);
 
 
-// Con filter se tra ve mot mang moi khi thoa man yeu cau
-var course = courses.filter(function(course,index) { 
-    return course.name === 'Ruby';
-})
+// // Con filter se tra ve mot mang moi khi thoa man yeu cau
+// var course = courses.filter(function(course,index) { 
+//     return course.name === 'Ruby';
+// })
 
-console.log(course);
+// console.log(course);

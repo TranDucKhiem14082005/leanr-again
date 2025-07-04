@@ -39,3 +39,187 @@
 
 // console.log(`this is curret date: ${day} / ${month} / ${year} / ${hours} : ${minutes} : ${seconds}`);
 
+//-------------==================------------------
+
+// Array map method in JavaScript
+//Muốn thay đổi một element trong mảng thì dùng map
+// Nó sẽ return về một mảng mới với các phần tử đã được thay đổi theo hàm callback
+// var courses = [
+//     {
+//         id: 1,
+//         name: 'JavaScript',
+//         coin: 100
+//     },
+//     {
+//         id: 2,
+//         name: 'PHP',
+//         coin: 200
+//     },
+//     {
+//         id: 3,
+//         name: 'Python',
+//         coin: 300
+//     },
+//     {
+//         id: 4,
+//         name: 'HTML & CSS',
+//         coin: 400
+//     }
+// ]
+
+//Sau khi nó trả về một mảng mới thì số lượng phần tử của nó
+// sẽ bằng với số lượng phần tử của mảng ban đầu
+
+//Đối số truyền vào phải là một function
+
+//tham số thứ 3 có thể không truyền vào
+
+// function courseHandler(course, index, originalArray) {
+//     return {
+//         id: course.id,
+//         name: `Khóa học: ${course.name}`,
+//         coin: course.coin,
+//         coinText: `Gia: ${course.coin}`,
+//         index: index,
+//         originalArray: originalArray
+//     }
+// }
+// // map method nay sẽ lặp qua tửng phần tử trong mảng
+// // và sẽ trả về từng phần tử trong mảng cũ về mảng mới.
+// // Trong quá trình mà chúng ta truyền vào một hàm. Thì khi mà
+// // hàm này được gọi thì nó sẽ nhận vào từng phần tử của mảng cũ
+// // và trả về một giá trị mới cho phần tử đó trong mảng mới
+// var newCourses = courses.map(courseHandler);
+
+// console.log(newCourses);
+
+
+
+//----------------------------- Reduce method in JavaScript -----------------------------
+// Reduce: muốn nhận về một giá trị duy nhất từ mảng 
+// khi chúng ta cần tính toán một giá trị nào đó từ mảng
+var courses = [
+    {
+        id: 1,
+        name: 'JavaScript',
+        coin: 100
+    },
+    {
+        id: 2,
+        name: 'PHP',
+        coin: 200
+    },
+    {
+        id: 3,
+        name: 'Python',
+        coin: 300
+    },
+    {
+        id: 4,
+        name: 'HTML & CSS',
+        coin: 400
+    }
+]
+
+// var totalCoin = 0;
+// for (var course of courses) {
+//     totalCoin += course.coin;
+// }
+// console.log(totalCoin); // 1000
+
+
+// Biến lưu trữ
+//Thực hiện việc lưu trữ
+
+
+// accumulator: là biến lưu trữ giá trị của lần lặp trước đó
+// currentValue: là giá trị của phần tử hiện tại trong mảng
+// function coinHandler(accumulator,currentValue,currentIndex,originalArray) {
+//     // console.log(accumulator); // giá trị của lần lặp trước đó
+//     // console.log(currentValue); // giá trị của phần tử hiện tại trong mảng.
+//     // console.log(currentIndex); // chỉ số của phần tử hiện tại trong mảng
+//     // console.log(originalArray); // mảng gốc
+
+//     return accumulator + currentValue.coin; // cộng dồn giá trị coin của các khóa học
+
+// }
+// Đối số thứ 2 được gọi là giá trị khởi tạo
+//Và nó được gán vào biến accumulator trong lần đầu tiên khi hàm callback
+// Nếu không truyền vào thì giá trị khởi tạo sẽ là phần tử đầu tiên của m
+// var totalCoin = courses.reduce(coinHandler, 0); 
+
+// initial value có thể không khởi tạo cũng được.
+// và nếu không có initial value thì nó sẽ lấy phần tử đầu
+// tiên của mảng làm giá trị khởi tại cho biến accumulator
+// Và cái current value sẽ là phần tử thứ 2 của mảng
+// console.log(totalCoin); // 1000
+
+// Những bài toán không dùng initial value
+
+var numbers = [100, 200, 300, 400];
+
+var totalCoin = numbers.reduce(function(accumulator,currentValue) {
+    return accumulator + currentValue; // cộng dồn giá trị của các phần tử trong mảng
+})
+
+console.log(totalCoin);
+
+
+// Flat - "Làm phẳng" mảng từ Depth array
+
+var depthArray = [1, 2, [3, 4], [5, 6, [7, 8]]];
+
+var flatArray = depthArray.reduce(function(flatOutput, depthItem) {
+
+    
+    // Kiểm tra xem depthItem có phải là mảng hay không
+    // Nếu là mảng thì tiếp tục làm phẳng nó bằng cách gọi lại hàm reduce
+    // arguments.callee là một cách để tham chiếu đến hàm hiện tại trong ngữ cảnh của nó
+    
+    // Nếu không phải mảng thì chuyển nó thành mảng với một phần tử
+    return Array.isArray(depthItem) 
+        ? depthItem.reduce((acc,val) => acc.concat(val), flatOutput)
+        : flatOutput.concat(depthItem);
+}, []);
+
+console.log(flatArray);
+
+var topic= [
+    {
+        topicName: 'JavaScript',
+        courses: [
+            { 
+                name: 'JS Basic',
+                coin: 100 
+            },
+            {   name: 'JS Advanced',
+                coin: 200 
+            }
+        ]
+    },
+    {
+        topicName: 'PHP',
+        courses: [
+            {   name: 'PHP Basic',
+                coin: 150 
+            },
+            {   name: 
+                'PHP Advanced',
+                coin: 250 
+            }
+        ]
+    }
+]
+
+var newCourses = topic.reduce(function(acc, topic) {
+    return acc.concat(topic.courses);
+    // tới bước này nó sẽ trả về một mảng gồm các khóa học của từng topic
+}, []);
+
+// Muốn có các tên của các khóa học trong từng topic đó thì tá sẽ làm:
+
+names = newCourses.map(function(course) {
+    return course.name;
+})
+
+console.log(names);
