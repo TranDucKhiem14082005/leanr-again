@@ -98,28 +98,28 @@
 //----------------------------- Reduce method in JavaScript -----------------------------
 // Reduce: muốn nhận về một giá trị duy nhất từ mảng 
 // khi chúng ta cần tính toán một giá trị nào đó từ mảng
-var courses = [
-    {
-        id: 1,
-        name: 'JavaScript',
-        coin: 100
-    },
-    {
-        id: 2,
-        name: 'PHP',
-        coin: 200
-    },
-    {
-        id: 3,
-        name: 'Python',
-        coin: 300
-    },
-    {
-        id: 4,
-        name: 'HTML & CSS',
-        coin: 400
-    }
-]
+// var courses = [
+//     {
+//         id: 1,
+//         name: 'JavaScript',
+//         coin: 100
+//     },
+//     {
+//         id: 2,
+//         name: 'PHP',
+//         coin: 200
+//     },
+//     {
+//         id: 3,
+//         name: 'Python',
+//         coin: 300
+//     },
+//     {
+//         id: 4,
+//         name: 'HTML & CSS',
+//         coin: 400
+//     }
+// ]
 
 // var totalCoin = 0;
 // for (var course of courses) {
@@ -156,70 +156,114 @@ var courses = [
 
 // Những bài toán không dùng initial value
 
-var numbers = [100, 200, 300, 400];
+// var numbers = [100, 200, 300, 400];
 
-var totalCoin = numbers.reduce(function(accumulator,currentValue) {
-    return accumulator + currentValue; // cộng dồn giá trị của các phần tử trong mảng
-})
+// var totalCoin = numbers.reduce(function(accumulator,currentValue) {
+//     return accumulator + currentValue; // cộng dồn giá trị của các phần tử trong mảng
+// })
 
-console.log(totalCoin);
+// console.log(totalCoin);
 
 
-// Flat - "Làm phẳng" mảng từ Depth array
+// // Flat - "Làm phẳng" mảng từ Depth array
 
-var depthArray = [1, 2, [3, 4], [5, 6, [7, 8]]];
+// var depthArray = [1, 2, [3, 4], [5, 6, [7, 8]]];
 
-var flatArray = depthArray.reduce(function(flatOutput, depthItem) {
+// var flatArray = depthArray.reduce(function(flatOutput, depthItem) {
 
     
-    // Kiểm tra xem depthItem có phải là mảng hay không
-    // Nếu là mảng thì tiếp tục làm phẳng nó bằng cách gọi lại hàm reduce
-    // arguments.callee là một cách để tham chiếu đến hàm hiện tại trong ngữ cảnh của nó
+//     // Kiểm tra xem depthItem có phải là mảng hay không
+//     // Nếu là mảng thì tiếp tục làm phẳng nó bằng cách gọi lại hàm reduce
+//     // arguments.callee là một cách để tham chiếu đến hàm hiện tại trong ngữ cảnh của nó
     
-    // Nếu không phải mảng thì chuyển nó thành mảng với một phần tử
-    return Array.isArray(depthItem) 
-        ? depthItem.reduce((acc,val) => acc.concat(val), flatOutput)
-        : flatOutput.concat(depthItem);
-}, []);
+//     // Nếu không phải mảng thì chuyển nó thành mảng với một phần tử
+//     return Array.isArray(depthItem) 
+//         ? depthItem.reduce((acc,val) => acc.concat(val), flatOutput)
+//         : flatOutput.concat(depthItem);
+// }, []);
 
-console.log(flatArray);
+// console.log(flatArray);
 
-var topic= [
+// var topic= [
+//     {
+//         topicName: 'JavaScript',
+//         courses: [
+//             { 
+//                 name: 'JS Basic',
+//                 coin: 100 
+//             },
+//             {   name: 'JS Advanced',
+//                 coin: 200 
+//             }
+//         ]
+//     },
+//     {
+//         topicName: 'PHP',
+//         courses: [
+//             {   name: 'PHP Basic',
+//                 coin: 150 
+//             },
+//             {   name: 
+//                 'PHP Advanced',
+//                 coin: 250 
+//             }
+//         ]
+//     }
+// ]
+
+// var newCourses = topic.reduce(function(acc, topic) {
+//     return acc.concat(topic.courses);
+//     // tới bước này nó sẽ trả về một mảng gồm các khóa học của từng topic
+// }, []);
+
+// // Muốn có các tên của các khóa học trong từng topic đó thì tá sẽ làm:
+
+// names = newCourses.map(function(course) {
+//     return course.name;
+// })
+
+// console.log(names);
+
+var courses = [
     {
-        topicName: 'JavaScript',
-        courses: [
-            { 
-                name: 'JS Basic',
-                coin: 100 
-            },
-            {   name: 'JS Advanced',
-                coin: 200 
-            }
-        ]
+        id: 1,
+        name: 'JavaScript',
+        coin: 100
     },
     {
-        topicName: 'PHP',
-        courses: [
-            {   name: 'PHP Basic',
-                coin: 150 
-            },
-            {   name: 
-                'PHP Advanced',
-                coin: 250 
-            }
-        ]
+        id: 2,
+        name: 'PHP',
+        coin: 200
+    },
+    {
+        id: 3,
+        name: 'Python',
+        coin: 300
+    },
+    {
+        id: 4,
+        name: 'HTML & CSS',
+        coin: 400
     }
 ]
 
-var newCourses = topic.reduce(function(acc, topic) {
-    return acc.concat(topic.courses);
-    // tới bước này nó sẽ trả về một mảng gồm các khóa học của từng topic
-}, []);
+var courseHandler = function(course, index, originalArray) { 
+    return {
+        id: course.id,
+        name: `Khóa học: ${course.name}`,
+        coin: course.coin,
+        coinText: `Giá: ${course.coin}`,
+        index: index,
+        originalArray: originalArray
+    }
+}
 
-// Muốn có các tên của các khóa học trong từng topic đó thì tá sẽ làm:
+var newCourses = courses.map(courseHandler);
 
-names = newCourses.map(function(course) {
-    return course.name;
-})
+console.log(newCourses);
 
-console.log(names);
+var totalCoin = courses.reduce(function(acc, currentValue) {
+    return acc + currentValue.coin;
+}, 0);
+
+console.log(totalCoin);
