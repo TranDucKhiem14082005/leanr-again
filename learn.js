@@ -831,3 +831,120 @@ Gioi thieu moi so ham built-in;
 // })
 
 // console.log(course);
+
+
+//---------------------------------------
+
+// includes method: Phương thức được tồn tại sẵn trong array và string
+
+
+// Trong String: Includes sẽ kiểm tra xem chuỗi có chứa một chuỗi con nào đó hay không
+//var title = 'Responsive web design';
+
+//console.log(title.includes('web',)); // Kiểm tra xem chuỗi có chứa từ 'web' hay không
+
+// Trong Array: Includes sẽ kiểm tra xem mảng có chứa một phần tử nào đó hay
+
+//var languages = ['JavaScript', 'PHP', 'Ruby', 'Python'];
+
+//console.log(languages.includes('PHP')); // Kiểm tra xem mảng có chứa phần tử 'PHP' hay không
+
+
+/*
+    Math object in JavaScript: Không phải là object constructor
+    Math là một đối tượng trong JavaScript cung cấp các phương thức và thuộc tính để thực hiện các phép toán học.
+    1. Các phương thức của Math object:
+    - Math.PI: Trả về giá trị của số pi (π).
+    - Math.round(): Làm tròn số đến số nguyên gần nhất.
+    - Math.abs(): Trả về giá trị tuyệt đối của một số.
+    - Math.ceil(): Làm tròn số lên.
+    - Math.floor(): Làm tròn số xuống.
+    - Math.random(): Trả về một số ngẫu nhiên trong khoảng từ 0 đến 1.
+    - Math.max(): Trả về giá trị lớn nhất trong một tập hợp các số.
+    - Math.min(): Trả về giá trị nhỏ nhất trong một tập hợp các số.
+    - Math.pow(): Tính lũy thừa của một số.
+    - Math.sqrt(): Tính căn bậc hai của một số.
+*/
+
+//console.log(Math.round(4.5)); // Làm tròn số 4.5 đến số nguyên gần nhất
+//console.log(Math.abs(-5)); // Trả về giá trị tuyệt đối của -5
+//console.log(Math.ceil(4.1)); // Làm tròn số 4.1 lên 5
+//console.log(Math.floor(4.9)); // Làm tròn số 4.9 xuống 4
+
+//console.log(Math.random()); // Trả về một số ngẫu nhiên trong khoảng từ 0 đến 1
+
+//console.log(Math.max(1, 2, 3, 4, 5)); // Trả về giá trị lớn nhất trong tập hợp các số
+//console.log(Math.min(1, 2, 3, 4, 5));
+
+
+// ---------------------------------------
+
+// Callback?
+// Là hàm được truyền qua đối số khi gọi hàm khác
+
+// 1. Là hàm
+// 2. Được truyền qua đối số
+// 3. Được gọi lại (rong hàm nhận đối số)
+
+// function myFunction(param) {
+
+//     if(typeof param === 'function') {
+//         console.log('param is a function');
+//     }
+    
+// }
+
+// function myCallback(value) {
+//     console.log('value: ', value);
+// }
+
+// myFunction(myCallback); // Truyền hàm myCallback vào hàm myFunction
+
+// Callback - Phần 2
+
+// Array.prototype.map2 = function(callback){
+//     var output =[], arrayLength = this.length;
+//     for(var i = 0; i < arrayLength; i++) {
+//         var result = callback(this[i], i);
+//         output.push(result);
+//     }
+
+//     return output;
+// }
+
+Array.prototype.forEach2 = function(callback){
+    var arrayLength = this.length;
+    for(var i = 0; i < arrayLength; i++) {
+        callback(this[i], i); // Gọi hàm callback với từng phần tử và index
+    }
+}
+
+var courses = [
+    'JavaScript',
+    'PHP',
+    'Ruby',
+    'Python'
+]
+
+// Duyệt qua từng phần tử trong mảng courses và in ra tên khóa học
+courses.forEach2(function(course, index) {
+    console.log(index, course);
+});
+
+courses.forEach(function(course,index) {
+    console.log(index, course);
+})
+
+
+// var html = courses.map2(function (course, index) {
+//     return `<h2>${course}</h2>`;
+// });
+
+// console.log(html.join(' '));
+
+
+// var html = courses.map(function(course) {
+//     return `<h2>${course}</h2>`
+// });
+
+// console.log(html.join(' ')); // Nối các phần tử trong mảng html thành một chuỗi  
