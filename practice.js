@@ -224,46 +224,46 @@
 
 // console.log(names);
 
-var courses = [
-    {
-        id: 1,
-        name: 'JavaScript',
-        coin: 100
-    },
-    {
-        id: 2,
-        name: 'PHP',
-        coin: 200
-    },
-    {
-        id: 3,
-        name: 'Python',
-        coin: 300
-    },
-    {
-        id: 4,
-        name: 'HTML & CSS',
-        coin: 400
-    }
-]
+// var courses = [
+//     {
+//         id: 1,
+//         name: 'JavaScript',
+//         coin: 100
+//     },
+//     {
+//         id: 2,
+//         name: 'PHP',
+//         coin: 200
+//     },
+//     {
+//         id: 3,
+//         name: 'Python',
+//         coin: 300
+//     },
+//     {
+//         id: 4,
+//         name: 'HTML & CSS',
+//         coin: 400
+//     }
+// ]
 
-var courseHandler = function(course, index, originalArray) { 
-    return {
-        id: course.id,
-        name: `Khóa học: ${course.name}`,
-        coin: course.coin,
-        coinText: `Giá: ${course.coin}`,
-        index: index,
-        originalArray: originalArray
-    }
-}
+// var courseHandler = function(course, index, originalArray) { 
+//     return {
+//         id: course.id,
+//         name: `Khóa học: ${course.name}`,
+//         coin: course.coin,
+//         coinText: `Giá: ${course.coin}`,
+//         index: index,
+//         originalArray: originalArray
+//     }
+// }
 
-var newCourses = courses.map(courseHandler);
+// var newCourses = courses.map(courseHandler);
 
-console.log(newCourses);
+// console.log(newCourses);
 
-var totalCoin = courses.reduce(function(acc, currentValue) {
-    return acc + currentValue.coin;
-}, 0);
+// var totalCoin = courses.reduce(function(acc, currentValue) {
+//     return acc + currentValue.coin;
+// }, 0);
 
-console.log(totalCoin);
+// console.log(totalCoin);
