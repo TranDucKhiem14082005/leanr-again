@@ -267,3 +267,132 @@
 // }, 0);
 
 // console.log(totalCoin);
+
+// --------------------------------
+
+
+// Lam viec voi array
+// Khong nhat thiet la length cua array phai bang voi
+// so phan tu cua array ban dau. Co the co nhung
+// phan tu undefined o cuoi array
+// Neu nhu ta gan length cua array bang mot so nho hon
+
+//forEach
+
+//for in duyet qua cac phan tu that cua array. 
+// no cung se duyet qua cac phan tu trong prototype
+
+// Array.prototype.forEach2= function(callback) {
+//     for(var index in this) {
+//         if(this.hasOwnProperty(index)){
+//             callback(this[index],index,this)
+//         }
+//     }
+// }
+
+// var courses = [
+//     'JavaScript',
+//     'PHP',
+//     'Python',
+//     'HTML & CSS',
+//     'Ruby'
+// ];
+
+// courses.forEach(function(course, index, arr) {
+//     console.log(index, course, arr);
+// });
+
+// courses.forEach2(function(course, index, arr) {
+//     console.log(index, course, arr);
+// })
+
+// ------------------------------- Filter method in JavaScript -------------------------------
+
+/// Filter: loc ra cac phan tu thoa man cac dieu kien
+// Khong lap qua array trong
+
+// Array.prototype.filter2 = function (callback) {
+//     var output = []
+//     for(var index in this) {
+//         if(this.hasOwnProperty(index)) {
+//            var result = callback(this[index],index,this);
+//            if(result) { 
+//                 output.push(this[index]);
+//            }
+//         }
+//     }
+
+//     return output;
+// }
+
+
+// Some: true / false
+// kiem tra neu phan tu hien tai da dung voi dieu kien thi
+// no se tra ve ket qua luon, va khong lap qua cac phan tu con lai
+
+// Array.prototype.some2 = function (callback) {
+//     for(var index in this) {
+//         if(this.hasOwnProperty(index)) {
+//             var result = callback(this[index], index, this);
+//             if(result) {
+//                 return true; // Neu co phan
+//             }
+            
+//         }
+//     }
+//     return false; 
+// }
+
+
+// Every: true / false
+// Kiem tra neu tat ca cac phan tu
+
+Array.prototype.every2 = function (callback) {
+    for(var index in this) {
+        if(this.hasOwnProperty(index)) {
+            if(callback(this[index], index, this) === false) {
+                return false; // Neu co phan tu khong th
+            }
+        }
+    }
+    return true;
+    
+}
+
+var courses = [
+    {
+        name: 'JavaScript',
+        coin: 100,
+        isFinish: true,
+    },
+    {
+        name: 'PHP',
+        coin: 200,
+        isFinish: true,
+    },
+    {
+        name: 'Python',
+        coin: 300,
+        isFinish: false,
+    },
+    {
+        name: 'HTML & CSS',
+        coin: 400,
+        isFinish: true,
+    }
+]
+
+
+var result = courses.every2(function(course,index,arr) {
+    return course.coin > 1000;
+})
+
+console.log(result);
+
+// var filterCouses = courses.filter2(function(course,index,arr) {
+//     console.log(course, index, arr);
+//     return course.coin > 200;
+// })
+
+// console.log(filterCouses);
+
