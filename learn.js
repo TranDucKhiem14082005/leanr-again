@@ -912,28 +912,28 @@ Gioi thieu moi so ham built-in;
 //     return output;
 // }
 
-Array.prototype.forEach2 = function(callback){
-    var arrayLength = this.length;
-    for(var i = 0; i < arrayLength; i++) {
-        callback(this[i], i); // Gọi hàm callback với từng phần tử và index
-    }
-}
+// Array.prototype.forEach2 = function(callback){
+//     var arrayLength = this.length;
+//     for(var i = 0; i < arrayLength; i++) {
+//         callback(this[i], i); // Gọi hàm callback với từng phần tử và index
+//     }
+// }
 
-var courses = [
-    'JavaScript',
-    'PHP',
-    'Ruby',
-    'Python'
-]
+// var courses = [
+//     'JavaScript',
+//     'PHP',
+//     'Ruby',
+//     'Python'
+// ]
 
-// Duyệt qua từng phần tử trong mảng courses và in ra tên khóa học
-courses.forEach2(function(course, index) {
-    console.log(index, course);
-});
+// // Duyệt qua từng phần tử trong mảng courses và in ra tên khóa học
+// courses.forEach2(function(course, index) {
+//     console.log(index, course);
+// });
 
-courses.forEach(function(course,index) {
-    console.log(index, course);
-})
+// courses.forEach(function(course,index) {
+//     console.log(index, course);
+// })
 
 
 // var html = courses.map2(function (course, index) {
