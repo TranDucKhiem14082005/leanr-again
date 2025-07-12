@@ -347,47 +347,47 @@
 // Every: true / false
 // Kiem tra neu tat ca cac phan tu
 
-Array.prototype.every2 = function (callback) {
-    for(var index in this) {
-        if(this.hasOwnProperty(index)) {
-            if(callback(this[index], index, this) === false) {
-                return false; // Neu co phan tu khong th
-            }
-        }
-    }
-    return true;
+// Array.prototype.every2 = function (callback) {
+//     for(var index in this) {
+//         if(this.hasOwnProperty(index)) {
+//             if(callback(this[index], index, this) === false) {
+//                 return false; // Neu co phan tu khong th
+//             }
+//         }
+//     }
+//     return true;
     
-}
+// }
 
-var courses = [
-    {
-        name: 'JavaScript',
-        coin: 100,
-        isFinish: true,
-    },
-    {
-        name: 'PHP',
-        coin: 200,
-        isFinish: true,
-    },
-    {
-        name: 'Python',
-        coin: 300,
-        isFinish: false,
-    },
-    {
-        name: 'HTML & CSS',
-        coin: 400,
-        isFinish: true,
-    }
-]
+// var courses = [
+//     {
+//         name: 'JavaScript',
+//         coin: 100,
+//         isFinish: true,
+//     },
+//     {
+//         name: 'PHP',
+//         coin: 200,
+//         isFinish: true,
+//     },
+//     {
+//         name: 'Python',
+//         coin: 300,
+//         isFinish: false,
+//     },
+//     {
+//         name: 'HTML & CSS',
+//         coin: 400,
+//         isFinish: true,
+//     }
+// ]
 
 
-var result = courses.every2(function(course,index,arr) {
-    return course.coin > 1000;
-})
+// var result = courses.every2(function(course,index,arr) {
+//     return course.coin > 1000;
+// })
 
-console.log(result);
+// console.log(result);
 
 // var filterCouses = courses.filter2(function(course,index,arr) {
 //     console.log(course, index, arr);
