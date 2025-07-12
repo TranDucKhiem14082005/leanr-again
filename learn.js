@@ -948,3 +948,15 @@ Gioi thieu moi so ham built-in;
 // });
 
 // console.log(html.join(' ')); // Nối các phần tử trong mảng html thành một chuỗi  
+
+//------------------------------============================================
+
+// ----------------------------- DE Quy ----------------------------
+
+//
+
+function deQuy() {
+
+}
+
+deQuy();
