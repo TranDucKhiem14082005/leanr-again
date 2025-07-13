@@ -203,8 +203,7 @@
 //             {   name: 'PHP Basic',
 //                 coin: 150 
 //             },
-//             {   name: 
-//                 'PHP Advanced',
+//             {   name: 'PHP Advanced',
 //                 coin: 250 
 //             }
 //         ]

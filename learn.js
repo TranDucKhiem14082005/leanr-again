@@ -902,15 +902,15 @@ Gioi thieu moi so ham built-in;
 
 // Callback - Phần 2
 
-// Array.prototype.map2 = function(callback){
-//     var output =[], arrayLength = this.length;
-//     for(var i = 0; i < arrayLength; i++) {
-//         var result = callback(this[i], i);
-//         output.push(result);
-//     }
+Array.prototype.map2 = function(callback){
+    var output =[], arrayLength = this.length;
+    for(var i = 0; i < arrayLength; i++) {
+        var result = callback(this[i], i);
+        output.push(result);
+    }
 
-//     return output;
-// }
+    return output;
+}
 
 // Array.prototype.forEach2 = function(callback){
 //     var arrayLength = this.length;
@@ -919,12 +919,12 @@ Gioi thieu moi so ham built-in;
 //     }
 // }
 
-// var courses = [
-//     'JavaScript',
-//     'PHP',
-//     'Ruby',
-//     'Python'
-// ]
+var courses = [
+    'JavaScript',
+    'PHP',
+    'Ruby',
+    'Python'
+]
 
 // // Duyệt qua từng phần tử trong mảng courses và in ra tên khóa học
 // courses.forEach2(function(course, index) {
@@ -936,11 +936,11 @@ Gioi thieu moi so ham built-in;
 // })
 
 
-// var html = courses.map2(function (course, index) {
-//     return `<h2>${course}</h2>`;
-// });
+var html = courses.map2(function (course, index) {
+    return `<h2>${course}</h2>`;
+});
 
-// console.log(html.join(' '));
+console.log(html.join(' '));
 
 
 // var html = courses.map(function(course) {
