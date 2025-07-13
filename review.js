@@ -169,19 +169,125 @@
 
 // delete myInfo.name
 
-function User(firsrtName, lastName, avatar) {
-    this.firsrtName = firsrtName;
-    this.lastName = lastName;
-    this.avatar = avatar;
-}
+// function User(firsrtName, lastName, avatar) {
+//     this.firsrtName = firsrtName;
+//     this.lastName = lastName;
+//     this.avatar = avatar;
+// }
 
-User.prototype.className = 'F8'; //Them một thuộc tính
-//vào trong Object 
+// User.prototype.className = 'F8'; //Them một thuộc tính
+// //vào trong Object 
 
-User.prototype.getavatar = function() {
-    return this.avatar;
-}
+// User.prototype.getavatar = function() {
+//     return this.avatar;
+// }
 
-var user = new User('Tran Duc', 'khiem', 'conGau')
+// var user = new User('Tran Duc', 'khiem', 'conGau')
 
-console.log(user.getavatar());
+// console.log(user.getavatar());
+
+/*
+
+    Array methods in JavaScript
+    forEach(): Duyet qua cac phan tu trong mang
+    every(): kiem tra cac phan tu trong mang co thoa man dieu kien gi khong
+    some(): kiem tra 1 trong nhung phan tu thoa man DK thi se tra ve true
+    find(): Tim kiem pt trong mang, neu co tra ve chinh pt do, con thi tra ve undefined
+    filter(): Se tra ve mot mang moi khi dung yeu dung nao do
+    map();
+    reduce();
+    indexOf();
+
+
+*/
+
+
+// var courses = [
+//     {
+//         id: 1,
+//         name: 'JavaScript',
+//         coin: 100
+//     },
+//     {
+//         id: 2,
+//         name: 'JAVA',
+//         coin: 400
+//     },
+//     {
+//         id: 3,
+//         name: 'Python',
+//         coin: 300
+//     },
+//     {
+//         id: 4,
+//         name: 'Ruby',
+//         coin: 700
+//     },
+//     {
+//         id: 5,
+//         name: 'Dart',
+//         coin: 800
+//     },
+
+// ]
+
+
+// var functionHandle1 = function(course, index, arr) {
+//     console.log(index, course);
+// }
+
+// var functionHandle2 = function(course,index, arr) {
+//     return course.coin > 100;
+// }
+
+// var functionHandle3 = function(course,index,arr) {
+//     return course.coin > 100;
+// }
+
+// courses.forEach(functionHandle1)
+
+// console.log(courses.every(functionHandle2));
+// console.log(courses.some(functionHandle2));
+
+
+// var course = courses.find(function(course,index) {
+//     return course.name === 'Ruby';
+// })
+
+// console.log(course);
+
+
+// var result2 = courses.filter(function(course,index){
+//     return course.name === 'JavaScript'
+// })
+
+// console.log(result2);
+
+// var result3 = courses.map(function(course,index,arr) {
+//     return {
+//         id: course.id,
+//         name: `Khoa hoc ${course.name}`,
+//         coin: course.coin
+//     }
+// })
+
+// console.log(result3);
+
+
+// var courseHandler4 = function(acc,currentValue,currentIndex, arr) {
+//     return acc + currentValue.coin
+// }
+
+// var totalCoin = courses.reduce(courseHandler4,0)
+
+// console.log(totalCoin);
+
+
+/*
+    function(flat,depthItem) {
+        return Array.isArray(depthItem) ?
+        depthItem.reduce((acc,val) => acc.concat(val),flat)
+        : flat.concat(depthItem);
+    }
+
+*/
