@@ -902,15 +902,15 @@ Gioi thieu moi so ham built-in;
 
 // Callback - Phần 2
 
-Array.prototype.map2 = function(callback){
-    var output =[], arrayLength = this.length;
-    for(var i = 0; i < arrayLength; i++) {
-        var result = callback(this[i], i);
-        output.push(result);
-    }
+// Array.prototype.map2 = function(callback){
+//     var output =[], arrayLength = this.length;
+//     for(var i = 0; i < arrayLength; i++) {
+//         var result = callback(this[i], i);
+//         output.push(result);
+//     }
 
-    return output;
-}
+//     return output;
+// }
 
 // Array.prototype.forEach2 = function(callback){
 //     var arrayLength = this.length;
@@ -919,12 +919,12 @@ Array.prototype.map2 = function(callback){
 //     }
 // }
 
-var courses = [
-    'JavaScript',
-    'PHP',
-    'Ruby',
-    'Python'
-]
+// var courses = [
+//     'JavaScript',
+//     'PHP',
+//     'Ruby',
+//     'Python'
+// ]
 
 // // Duyệt qua từng phần tử trong mảng courses và in ra tên khóa học
 // courses.forEach2(function(course, index) {
@@ -936,11 +936,11 @@ var courses = [
 // })
 
 
-var html = courses.map2(function (course, index) {
-    return `<h2>${course}</h2>`;
-});
+// var html = courses.map2(function (course, index) {
+//     return `<h2>${course}</h2>`;
+// });
 
-console.log(html.join(' '));
+// console.log(html.join(' '));
 
 
 // var html = courses.map(function(course) {
@@ -955,8 +955,73 @@ console.log(html.join(' '));
 
 //
 
-function deQuy() {
+// function deQuy() {
 
+// }
+
+// deQuy();
+
+// ----------------------------------------------------
+
+
+/*
+    arrow function
+*/
+
+// function thong thuong
+// const logger = function(log) {
+//     console.log(log);
+// }
+// logger('message....')
+
+// //Arrow function
+
+// const logger2 = (log) => {
+//     console.log(log);
+// }
+
+// logger2('this is message 2....')
+
+
+// const sum = (a,b) => {
+//     return a + b;
+// }
+
+// console.log(sum(2,3));
+
+// const sum2 = (a,b) => a + b;
+
+// console.log(sum(3,5));
+
+//neu muon tra ve mot khoi lenh nao do thi chung ta se
+// bo vao trong dau ngoac don, neu khoong thi no se
+// tra ve loi do cu phap
+
+// const sum3 = (a,b) => ({a: a, b: b});
+
+// console.log(sum3(2,5));
+
+const course = {
+    name: 'JS basic!',
+    getName: function() {
+        return this.name; //context
+    }
+}
+console.log(course.getName());
+
+// thang arrow function se khong co context
+// tuc la tu this, neu chung ta dung tu this trong arrow function
+// thi se bi loi
+
+//Arrow function se kh duoc su dung lam function constructor duoc
+
+
+//Constructor function 
+
+const Course = function (name, price) {
+    this.name = name;
+    this.price = price;
 }
 
-deQuy();
+const jsCourse = new Course('JS',1000)
+ console.log(jsCourse);

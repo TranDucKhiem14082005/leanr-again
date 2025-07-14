@@ -202,34 +202,34 @@
 */
 
 
-var courses = [
-    {
-        id: 1,
-        name: 'JavaScript',
-        coin: 100
-    },
-    {
-        id: 2,
-        name: 'JAVA',
-        coin: 400
-    },
-    {
-        id: 3,
-        name: 'Python',
-        coin: 300
-    },
-    {
-        id: 4,
-        name: 'Ruby',
-        coin: 700
-    },
-    {
-        id: 5,
-        name: 'Dart',
-        coin: 800
-    },
+// var courses = [
+//     {
+//         id: 1,
+//         name: 'JavaScript',
+//         coin: 100
+//     },
+//     {
+//         id: 2,
+//         name: 'JAVA',
+//         coin: 400
+//     },
+//     {
+//         id: 3,
+//         name: 'Python',
+//         coin: 300
+//     },
+//     {
+//         id: 4,
+//         name: 'Ruby',
+//         coin: 700
+//     },
+//     {
+//         id: 5,
+//         name: 'Dart',
+//         coin: 800
+//     },
 
-]
+// ]
 
 
 // var functionHandle1 = function(course, index, arr) {
@@ -292,75 +292,75 @@ var courses = [
 
 */
 
-Array.prototype.forEach2 = function(callback) {
-    for (var index in this) {
-        if(this.hasOwnProperty(index)) {
-            console.log(this[index],index,this);
-        }
-    }
-}
+// Array.prototype.forEach2 = function(callback) {
+//     for (var index in this) {
+//         if(this.hasOwnProperty(index)) {
+//             console.log(this[index],index,this);
+//         }
+//     }
+// }
 
-Array.prototype.every2 = function(callback) {
-    for( var index in this) {
-        if(this.hasOwnProperty(index)) {
-            var result = callback(this[index],index,this);
-            if(!result) {
-                return false;
-            }
+// Array.prototype.every2 = function(callback) {
+//     for( var index in this) {
+//         if(this.hasOwnProperty(index)) {
+//             var result = callback(this[index],index,this);
+//             if(!result) {
+//                 return false;
+//             }
 
-        }
-    }
-    return true;
-}
-
-
-Array.prototype.some2 = function(callback) {
-    for(var index in this) {
-        if(this.hasOwnProperty(index)) {
-            var result = callback(this[index], index, this);
-            if(result) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
-
-Array.prototype.filter2 = function(callback) {
-    var output = [];
-    for(var index in this) {
-        if(this.hasOwnProperty(index)) {
-            var result = callback(this[index],index,this);
-            if(result) {
-                output.push(this[index]);
-            }
-        }
-    }
-    return output;
-}
+//         }
+//     }
+//     return true;
+// }
 
 
-Array.prototype.find2 = function(callback) {
-    var output;
-    for(var index in this) {
-        if(this.hasOwnProperty(index)) {
-            var result = callback(this[index],index,this);
-            if(result) {
-                output = this[index];
-            }
-        }
-    }
-    return output;
-}
+// Array.prototype.some2 = function(callback) {
+//     for(var index in this) {
+//         if(this.hasOwnProperty(index)) {
+//             var result = callback(this[index], index, this);
+//             if(result) {
+//                 return true;
+//             }
+//         }
+//     }
+//     return false;
+// }
 
-Array.prototype.map2 = function(callback) {
-    var output = [], arrayLength = this.length;
-    for(var i = 0; i < arrayLength; i++) {
-        var result = callback(this[i], i);
-        output.push(result);
-    }
-    return output;
-}
+// Array.prototype.filter2 = function(callback) {
+//     var output = [];
+//     for(var index in this) {
+//         if(this.hasOwnProperty(index)) {
+//             var result = callback(this[index],index,this);
+//             if(result) {
+//                 output.push(this[index]);
+//             }
+//         }
+//     }
+//     return output;
+// }
+
+
+// Array.prototype.find2 = function(callback) {
+//     var output;
+//     for(var index in this) {
+//         if(this.hasOwnProperty(index)) {
+//             var result = callback(this[index],index,this);
+//             if(result) {
+//                 output = this[index];
+//             }
+//         }
+//     }
+//     return output;
+// }
+
+// Array.prototype.map2 = function(callback) {
+//     var output = [], arrayLength = this.length;
+//     for(var i = 0; i < arrayLength; i++) {
+//         var result = callback(this[i], i);
+//         output.push(result);
+//     }
+//     return output;
+// }
 
 // var courses = [
 //     'JavaScript',
@@ -408,27 +408,28 @@ Array.prototype.map2 = function(callback) {
 
 // console.log(totalCoin);
 
-Array.prototype.reduce2 = function(callback, inititalValue2) {
-    var acc = inititalValue2;
-    var start = 0;
-    var arrayLength = this.length
+// Array.prototype.reduce2 = function(callback, inititalValue2) {
+//     var acc = inititalValue2;
+//     var start = 0;
+//     var arrayLength = this.lecaler
+//     ngth
     
-        if(acc === undefined) {
-            acc = this[0];
-            start = 1;
-        }
-        for(var index  = start; index < arrayLength; index++) {
-            if(this.hasOwnProperty(index)) {
+//         if(acc === undefined) {
+//             acc = this[0];
+//             start = 1;
+//         }
+//         for(var index  = start; index < arrayLength; index++) {
+//             if(this.hasOwnProperty(index)) {
 
-                acc = callback(acc,this[index], index, this)
-            }
-        }
+//                 acc = callback(acc,this[index], index, this)
+//             }
+//         }
 
-    return acc;
-}
+//     return acc;
+// }
 
-var codehandle = function(acc,crr,index,arr) {
-    return acc + crr.coin; 
-}
+// var codehandle = function(acc,crr,index,arr) {
+//     return acc + crr.coin; 
+// }
 
-console.log(courses.reduce2(codehandle,0));
+// console.log(courses.reduce2(codehandle,0));
