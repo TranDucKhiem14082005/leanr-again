@@ -81,36 +81,65 @@
 //Abstraction: TRUU TUONG
 
 
-class Order {
-    constructor(orderID,customerName) {
-        this.orderID = orderID ;
-        this.customerName = customerName;
+// class Order {
+//     constructor(orderID,customerName) {
+//         this.orderID = orderID ;
+//         this.customerName = customerName;
+//     }
+
+//     placeOrder() {
+//         this.#prepareOrder();
+//         this.#processPayment();
+//         this.#shipOrder();
+
+//         //Ghi ma khach hang da dat hang, thi minh chi hien thi
+//         // thong tin dat don hang co thanh cong hay khong
+//         // Con` nhung phuong thuc kia minh se khong hien thi
+//         // vi chung la nhung phuong thuc Private. Va KH cung kh can phai biet
+//         console.log('Don hang da duoc dat thanh cong!');
+//     }
+
+//     //Tao ra cac phuong thuc de xu ly don hang nhung Private
+
+//     #prepareOrder() {
+//         console.log(`Chuan bi don han ${this.orderID} cho ${this.customerName}`);
+//     }
+//     #processPayment() {
+//         console.log(`Xu ly thanh toan don hang ${this.orderID} cho ${this.customerName}`);
+//     }
+//     #shipOrder() {
+//         console.log(`Giao don hang ${this.orderID} den ${this.customerName}`);
+//     }
+// }
+
+// const myOrder = new Order(123, 'Tran Duc Khiem');
+// myOrder.placeOrder();
+
+
+// ==== static property and methods
+
+class Calculator {
+    static value = 0;
+    static plus(num) {
+        this.value += num;
+        return this;
     }
 
-    placeOrder() {
-        this.#prepareOrder();
-        this.#processPayment();
-        this.#shipOrder();
-
-        //Ghi ma khach hang da dat hang, thi minh chi hien thi
-        // thong tin dat don hang co thanh cong hay khong
-        // Con` nhung phuong thuc kia minh se khong hien thi
-        // vi chung la nhung phuong thuc Private. Va KH cung kh can phai biet
-        console.log('Don hang da duoc dat thanh cong!');
+    static subtract(num) {
+        this.value -= num;
+        return this;
+    }
+    static multiply(num) {
+        this.value *= num;
+        return this;
     }
 
-    //Tao ra cac phuong thuc de xu ly don hang nhung Private
-
-    #prepareOrder() {
-        console.log(`Chuan bi don han ${this.orderID} cho ${this.customerName}`);
-    }
-    #processPayment() {
-        console.log(`Xu ly thanh toan don hang ${this.orderID} cho ${this.customerName}`);
-    }
-    #shipOrder() {
-        console.log(`Giao don hang ${this.orderID} den ${this.customerName}`);
+    static getResult() {
+        return this.value;
     }
 }
 
-const myOrder = new Order(123, 'Tran Duc Khiem');
-myOrder.placeOrder();
+
+const result = Calculator.plus(10).subtract(5).multiply(2).getResult();
+
+console.log(result);
